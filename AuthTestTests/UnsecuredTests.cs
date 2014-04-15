@@ -1,0 +1,8 @@
+﻿
+
+namespace AuthTestTests
+{
+    class UnsecuredTests
+    {
+    }
+}
