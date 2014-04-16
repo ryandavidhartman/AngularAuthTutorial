@@ -53,7 +53,7 @@
       <Project>{eb2f897e-f706-4609-954a-03dfbadd698b}</Project>
       <Name>AuthTestModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AuthTest\AuthTestAPI.csproj">
+    <ProjectReference Include="..\AuthTestAPI\AuthTestAPI.csproj">
       <Project>{75e51e35-0a23-40fb-ade7-f76b57a68f44}</Project>
       <Name>AuthTestAPI</Name>
     </ProjectReference>

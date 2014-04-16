@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthTestAPI", "AuthTest\AuthTestAPI.csproj", "{75E51E35-0A23-40FB-ADE7-F76B57A68F44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthTestAPI", "AuthTestAPI\AuthTestAPI.csproj", "{75E51E35-0A23-40FB-ADE7-F76B57A68F44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthTestModel", "AuthTestModel\AuthTestModel.csproj", "{EB2F897E-F706-4609-954A-03DFBADD698B}"
 EndProject
