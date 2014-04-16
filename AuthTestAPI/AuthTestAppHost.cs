@@ -1,5 +1,4 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Reflection;
 using Funq;
 using ServiceStack;
@@ -37,15 +36,7 @@ namespace AuthTest
 
             //Store User Data into the referenced SqlServer database
             container.Register<IUserAuthRepository>(c => new OrmLiteAuthRepository(c.Resolve<IDbConnectionFactory>()));
-
-            var authRepo = (OrmLiteAuthRepository)container.Resolve<IUserAuthRepository>();
-
-            var recreateAuthTables = ConfigurationManager.AppSettings["RecreateAuthTables"];
-            if ("true".Equals(recreateAuthTables, StringComparison.CurrentCultureIgnoreCase))
-                authRepo.DropAndReCreateTables(); //Drop and re-create all Auth and registration tables
-            else
-                authRepo.InitSchema();   //Create only the missing tables
-
+            
             Plugins.Add(new CorsFeature());
         }
     }
