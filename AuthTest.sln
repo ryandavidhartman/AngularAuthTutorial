@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthTestAPI", "AuthTestAPI\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthTestModel", "AuthTestModel\AuthTestModel.csproj", "{EB2F897E-F706-4609-954A-03DFBADD698B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthTestUnitsTests", "AuthTestTests\AuthTestUnitsTests.csproj", "{2DE844F5-D5A7-4289-A460-662AC3627367}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthTestUnitTests", "AuthTestUnitTests\AuthTestUnitTests.csproj", "{2DE844F5-D5A7-4289-A460-662AC3627367}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{53EEC53A-EAA2-4EC4-8E33-FC92F838ECF3}"
 EndProject
