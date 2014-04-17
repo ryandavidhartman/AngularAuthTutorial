@@ -8,7 +8,7 @@ namespace AuthTestIntegrationTests
     public class UnsecuredServiceTest : TestBase
     {
         [Test]
-        public void do_unathenticated_get()
+        public void do_unsecured_get()
         {
             var restClient = new JsonServiceClient(WebServerUrl);
             var response = restClient.Get<UnsecuredResponse>("/Unsecured/SomeData1");
@@ -17,7 +17,7 @@ namespace AuthTestIntegrationTests
         }
 
         [Test]
-        public void do_unathenticated_post()
+        public void do_unsecured_post()
         {
             var restClient = new JsonServiceClient(WebServerUrl);
 
@@ -27,5 +27,9 @@ namespace AuthTestIntegrationTests
             Assert.IsNotNull(response);
             Assert.AreEqual("Bob", response.Result);
         }
+
+        /*
+        [Test]
+        public void do_un*/
     }
 }
