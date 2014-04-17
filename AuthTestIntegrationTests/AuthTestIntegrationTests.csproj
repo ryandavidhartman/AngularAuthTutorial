@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecuredServiceTest.cs" />
+    <Compile Include="TestBase.cs" />
     <Compile Include="UnsecuredServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,6 +12,7 @@ namespace AuthTestModel.Data
     public class SecuredResponse
     {
         public string Result { get; set; }
+        public string UserName { get; set; }
         public ResponseStatus ResponseStatus { get; set; }
     }
 }

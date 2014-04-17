@@ -8,7 +8,9 @@ namespace AuthTest.Services
     {
         public object Any(Secured request)
         {
-            return new SecuredResponse { Result = request.Data };
+            var session = GetSession();
+            var userName = session.UserName;
+            return new SecuredResponse { Result = request.Data, UserName = userName};
         }
     }
 }

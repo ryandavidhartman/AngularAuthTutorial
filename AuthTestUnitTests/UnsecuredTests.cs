@@ -1,8 +1,9 @@
-﻿
+﻿using NUnit.Framework;
 
 namespace AuthTestTests
 {
-    class UnsecuredTests
+    [TestFixture]
+    public class UnsecuredTests
     {
     }
 }

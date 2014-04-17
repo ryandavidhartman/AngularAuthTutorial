@@ -1,5 +1,4 @@
-﻿using System.Configuration;
-using System.Net;
+﻿using System.Net;
 using AuthTestModel.Data;
 using NUnit.Framework;
 using ServiceStack;
@@ -7,16 +6,8 @@ using ServiceStack;
 namespace AuthTestIntegrationTests
 {
     [TestFixture]
-    public class SecuredServiceTest
+    public class SecuredServiceTest : TestBase
     {
-        public string WebServerUrl { get; set; } 
-
-        [TestFixtureSetUp]
-        public void set_up()
-        {
-            WebServerUrl = ConfigurationManager.AppSettings["WebServerUrl"];
-        }
-
         [Test]
         public void check_authenticated_get_requires_credentials()
         {
@@ -27,24 +18,26 @@ namespace AuthTestIntegrationTests
         }
 
         [Test]
-        public void do_unathenticated_get()
+        public void do_authenticated_get()
         {
-            var restClient = new JsonServiceClient(WebServerUrl);
-            var response = restClient.Get<UnsecuredResponse>("/Unsecured/SomeData1");
+            var restClient = new JsonServiceClient {BaseUri = WebServerUrl, UserName = UserName, Password = UserPassword};
+            var response = restClient.Get<SecuredResponse>("/Secured/SomeData1");
             Assert.IsNotNull(response);
             Assert.AreEqual("SomeData1", response.Result);
+            Assert.AreEqual(UserName, response.UserName);
         }
 
         [Test]
-        public void do_unathenticated_post()
+        public void do_athenticated_post()
         {
-            var restClient = new JsonServiceClient(WebServerUrl);
+            var restClient = new JsonServiceClient { BaseUri = WebServerUrl, UserName = UserName, Password = UserPassword };
 
-            var request = new Unsecured { Data = "Bob" };
-            var response = restClient.Post<UnsecuredResponse>("/Unsecured/", request);
+            var request = new Secured { Data = "Bob" };
+            var response = restClient.Post<SecuredResponse>("/Secured/", request);
 
             Assert.IsNotNull(response);
             Assert.AreEqual("Bob", response.Result);
+            Assert.AreEqual(UserName, response.UserName);
         }
     }
 }

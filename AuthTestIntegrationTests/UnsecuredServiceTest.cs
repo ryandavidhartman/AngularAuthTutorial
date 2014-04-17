@@ -1,21 +1,12 @@
-﻿using System.Configuration;
-using AuthTestModel.Data;
+﻿using AuthTestModel.Data;
 using NUnit.Framework;
 using ServiceStack;
 
 namespace AuthTestIntegrationTests
 {
     [TestFixture]
-    public class UnsecuredServiceTest
+    public class UnsecuredServiceTest : TestBase
     {
-        public string WebServerUrl { get; set; } 
-
-        [TestFixtureSetUp]
-        public void set_up()
-        {
-            WebServerUrl = ConfigurationManager.AppSettings["WebServerUrl"];
-        }
-
         [Test]
         public void do_unathenticated_get()
         {
